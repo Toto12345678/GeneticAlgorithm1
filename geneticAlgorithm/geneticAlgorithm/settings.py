@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'geneticAlgorithmAPI',
-    'deap'
+    'diet_decision_diabetics'
 ]
 
 MIDDLEWARE = [
@@ -54,13 +54,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
-
 CSRF_TRUSTED_ORIGINS = [
     'localhost:8000',
     '127.0.0.1:8000'
     '192.168.1.72:8080'
-    ]
+]
 
 CSRF_TRUSTED_ORIGINS = (
     'localhost:8000',
@@ -97,10 +95,21 @@ WSGI_APPLICATION = 'geneticAlgorithm.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+DATABASES = {# postgresql_psycoqpg2 and psycoqpg2-binary
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'food',
+        'USER': 'toto',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -142,3 +151,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+CORS_ORIGIN_ALLOW_ALL = True

@@ -97,7 +97,7 @@ def hola(request):
 
     # #chart
     # plot_chart(population, a, b, c, d, g, True)
-    create_video()
+    #create_video()
     plot_last(bests, means, worsts, g)
     print('************************************************************************************************************************************************************')
     print(population)
@@ -149,7 +149,7 @@ def plot_chart(population, a, b, c, d, g, end=False):
 
     plt.savefig('img'+str(g)+'.png', bbox_inches='tight')
 
-def get_gists(population,):
+def get_gists(population):
     values = [individual.fitness for individual in population.copy()] #extract the values of each individual
     values.sort()
     return values[(len(values)-1)], values[0] ,np.mean(values)
@@ -235,8 +235,10 @@ def crossover(offspring):
     first_porcent = int((10 *len(offspring))/100)
 
     for child1, child2 in zip(offspring[::2], offspring[1::2]):
+        print (child1)
+        print(child2)
         if child1.cdf > CXPB:
-            offspring1, offspring2 = cross(child1, child1)
+            offspring1, offspring2 = cross(child1, child2)
             offspring_children.append(Individual(offspring1.chromosome_list.copy(), 0, 0, 0, 0))
             offspring_children.append(Individual(offspring2.chromosome_list.copy(), 0, 0, 0, 0))
     offspring.extend(offspring_children)

@@ -17,5 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('api/', include('geneticAlgorithmAPI.urls'))
+    path('api/', include('geneticAlgorithmAPI.urls')),
+    path('api/food/',include('diet_decision_diabetics.urls')),
+    path('api/food/altered/',include('altered_diet_decision.urls'))
 ]
