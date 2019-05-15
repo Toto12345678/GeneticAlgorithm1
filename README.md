@@ -1,5 +1,5 @@
 # GeneticAlgorithm1
-Implementation of a decision support system for choosing a menu with a genetic algorithm method in Django using Django Rest Framework [using this papper as reference](https://doi.org/10.1051/e3sconf/20183110006)
+Implementation of a decision support system for choosing a menu with a genetic algorithm method in Django using Django Rest Framework [with this paper as reference](https://doi.org/10.1051/e3sconf/20183110006)
 
 ### ⚠️ Note
 This the server implementation of the genetic algorithm, for the client implementation visit  [this link](https://github.com/Toto12345678/geneticAlgorithm-Front)
